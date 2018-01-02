@@ -1,0 +1,353 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Monaco;
+}
+{\colortbl;\red255\green255\blue255;\red98\green98\blue98;\red98\green98\blue98;\red255\green255\blue255;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\partightenfactor0
+
+\f0\fs22 \cf0 \expnd0\expndtw0\kerning0
+Array 2\
+Mr. Daniel\
+George Lyu S3C7\
+\
+\
+\pard\tx20\tx380\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li360\fi-360\partightenfactor0
+\ls1\ilvl0
+\f1\fs24 \cf0 \kerning1\expnd0\expndtw0 {\listtext	1.	}
+\f0\fs22 \expnd0\expndtw0\kerning0
+countEvens\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\partightenfactor0
+\cf0 \
+public int countEvens(int[] nums) \{\
+  int count=0;\
+  for(int i=0;i<nums.length;i++)\
+  if(nums[i]%2==0)\
+  count++;\
+  return count;\
+\}\
+\
+2. bigDiff\
+\
+public int bigDiff(int[] nums) \{\
+  int max=nums[0];\
+  int min=nums[0];\
+  for (int i=0; i<nums.length; i++)\{\
+    if (nums[i]>max)\
+      max=nums[i];\
+    if (nums[i]<=min)\
+      min=nums[i];\
+  \}\
+  return max-min;\
+\}\
+\
+3. centeredAverage\
+\
+public int centeredAverage(int[] nums) \{\
+    int max = nums[0];\
+    int min = nums[0];\
+    int sum = 0;\
+ \
+    for (int i = 0; i < nums.length; i++) \{\
+        sum += nums[i];\
+        if (nums[i] > max) max = nums[i];\
+        if (nums[i] < min) min = nums[i];\
+    \}\
+    return (sum - (max + min)) / (nums.length - 2);\
+\}\
+\
+4. sum13\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl308\partightenfactor0
+\cf0 public int sum13(int[] nums) \{\
+\'a0\'a0\'a0\'a0int total = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++) \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] != 13) total += nums[i];\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else if (i <= nums.length - 1) i++;\
+\'a0\'a0\'a0\'a0\}\
+\'a0\'a0\'a0\'a0return total;\
+\}\
+\
+5. sum 67\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl308\partightenfactor0
+
+\fs24 \cf0 \
+public boolean has22(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i <= nums.length - 2; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 2 && nums[i + 1] == 2) return true;\
+\'a0\'a0\'a0\'a0return false;\
+\
+6. has22\
+public boolean has22(int[] nums) \{\
+\'a0\'a0\'a0\'a0for (int i = 0; i <= nums.length - 2; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 2 && nums[i + 1] == 2) return true;\
+\'a0\'a0\'a0\'a0return false;\
+\
+7. lucky13\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl308\partightenfactor0
+
+\b \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl308\partightenfactor0
+
+\b0 \cf0 public boolean lucky13(int[] nums) \{\
+    for (int i = 0; i < nums.length; i++)\
+        if (nums[i] == 1 || nums[i] == 3) return false;\
+    return true;\
+\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl308\partightenfactor0
+\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl308\partightenfactor0
+\cf0 8. sum28\
+public boolean sum28(int[] nums) \{\
+\'a0\'a0\'a0\'a0int sum = 0;\
+\'a0\'a0\'a0\'a0for (int i = 0; i < nums.length; i++)\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0if (nums[i] == 2) sum += 2;\
+\'a0\'a0\'a0\'a0return sum == 8;\
+\}\cf2 \
+\
+\cf0 9. more14\
+\
+  public boolean more14(int[] nums) \{\
+    int ones = 0;\
+    int fours = 0;\
+ \
+    for (int i = 0; i < nums.length; i++) \{\
+        if (nums[i] == 1) ones++;\
+        if (nums[i] == 4) fours++;\
+    \}\
+    return ones > fours;\
+\}\
+\
+10. public int[] fizzArray(int n) \{\
+    int[] result = new int[n];\
+    for (int i = 0; i < n; i++)\
+        result[i] = i;\
+    return result;\
+\}\
+\
+\
+11.only 14\
+\
+\
+  public boolean only14(int[] nums) \{\
+    for (int i = 0; i < nums.length; i++)\
+        if (nums[i] != 1 && nums[i] != 4) return false;\
+    return true;\
+\}\
+\
+12. fizzArray2\
+public String[] fizzArray2(int n) \{\
+    String[] result = new String[n];\
+    for (int i = 0; i < n; i++)\
+        result[i] = String.valueOf(i);\
+    return result;\
+\
+\}\
+\
+13. no14\
+public boolean no14(int[] nums) \{\
+  int ones=0;\
+  int fours=0;\
+  for(int i=0; i<nums.length; i++)\{\
+    if (nums[i] == 1) ones++;\
+    if (nums[i] == 4) fours++;\
+\}return ones == 0 || fours == 0;\
+\}\
+\
+\
+14. either 24\
+public boolean either24(int[] nums) \{\
+    Boolean twos = false;\
+    Boolean fours = false;\
+ \
+    for (int i = 0; i < nums.length - 1; i++) \{\
+        if (nums[i] == 2 && nums[i + 1] == 2) twos = true;\
+        if (nums[i] == 4 && nums[i + 1] == 4) fours = true;\
+    \}\
+    return twos ^ fours;\
+\}\
+\
+15. matchup\
+public int matchUp(int[] nums1, int[] nums2) \{\
+    int count = 0;\
+    for (int i = 0; i < nums1.length; i++)\
+        if (nums1[i] != nums2[i]\
+            && Math.abs(nums1[i] - nums2[i]) <= 2)\
+                count++;\
+    return count;\
+\}\
+\
+16. has77\
+public boolean has77(int[] nums) \{\
+    for (int i = 0; i < nums.length - 1; i++)\
+        if (nums[i] == 7 && nums[i + 1] == 7) return true;\
+ \
+    for (int i = 0; i < nums.length - 2; i++)\
+        if (nums[i] == 7 && nums[i + 2] == 7) return true;\
+ \
+    return false;\
+\}\
+\
+17. has12\
+public boolean has12(int[] nums) \{\
+    int one = 0;\
+    int two = 0;\
+    for (int i = 0; i < nums.length; i++) \{\
+        if (nums[i] == 1) one = i;\
+        if (nums[i] == 2) two = i;\
+    \}\
+    return two > one;\
+\}\
+\
+18. mod three\
+public boolean modThree(int[] nums) \{\
+    for (int i = 0; i <= nums.length - 3; i++) \{\
+        boolean cond1 = nums[i] % 2 == 0 && nums[i + 1] % 2 == 0\
+                && nums[i + 2] % 2 == 0;\
+        boolean cond2 = nums[i] % 2 == 1 && nums[i + 1] % 2 == 1\
+                && nums[i + 2] % 2 == 1;\
+        if (cond1 || cond2) return true;\
+    \}\
+    return false;\
+\}\
+\
+19. have three\
+public boolean haveThree(int[] nums) \{\
+    int count = 0;\
+    int pos = -2; \
+ \
+    for (int i = 0; i < nums.length; i++) \{\
+        if (nums[i] == 3) \{\
+            count++;\
+            if (i - pos == 1) return false;\
+            pos = i;\
+        \}\
+    \}\
+ \
+    return count == 3;\
+\}\
+\
+20. twotwo\
+public boolean twoTwo(int[] nums) \{\
+    for (int i = 0; i < nums.length; i++)\
+        if (nums[i] == 2) \{\
+            int count = 0;\
+            for (int j = i; j < nums.length; j++)\
+                if (nums[j] == 2) count++;\
+                else break;\
+            i += count;\
+            if (count < 2) return false;\
+        \}\
+    return true;\
+\}\
+\
+21. sameEnd\
+public boolean sameEnds(int[] nums, int len) \{\
+    for (int i = 0, j = nums.length - len; i < len; i++, j++)\
+        if (nums[i] != nums[j]) return false;\
+    return true;\
+\}\
+\
+22. Triple\
+public boolean tripleUp(int[] nums) \{\
+    for (int i = 0; i <= nums.length - 3; i++)\
+        if (nums[i + 1] == nums[i] + 1 && nums[i + 2] == nums[i] + 2)\
+            return true;\
+    return false;\
+\}\
+23. shiftleft\
+public int[] shiftLeft(int[] nums) \{\
+    if (nums.length > 0) \{\
+        int first = nums[0];\
+        for (int i = 0; i < nums.length - 1; i++)\
+            nums[i] = nums[i + 1];\
+        nums[nums.length - 1] = first;\
+    \}\
+    return nums;\
+\}\
+24. tenrun\
+public int[] tenRun(int[] nums) \{\
+    boolean replace = false;\
+    int multiple = 0;\
+ \
+    for (int i = 0; i < nums.length; i++) \{\
+        if (nums[i] % 10 == 0) \{\
+            if (!replace) \{\
+                replace = true;\
+                multiple = nums[i];\
+            \} else\
+                multiple = nums[i];\
+        \}\
+        if (nums[i] % 10 != 0 && replace) nums[i] = multiple;\
+    \}\
+    return nums;\
+\}\
+25. \
+\pard\pardeftab720\sl308\partightenfactor0
+
+\f2\fs28 \cf3 \cb4 \outl0\strokewidth0 \strokec3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl308\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \outl0\strokewidth0 26. \
+public int[] notAlone(int[] nums, int val) \{\
+    for (int i = 1; i < nums.length - 1; i++)\
+        if (nums[i] == val && nums[i - 1] != val\
+            && nums[i + 1] != val)\
+            nums[i] = Math.max(nums[i - 1], nums[i + 1]);\
+    return nums;\
+\}\
+27. \
+public int[] zeroFront(int[] nums) \{\
+    int[] res      = new int[nums.length];\
+    int zeroPos    = 0;\
+    int nonZeroPos = res.length - 1;\
+ \
+    for (int i = 0; i < nums.length; i++)\
+        if (nums[i] == 0)\
+            res[zeroPos++]    = 0;\
+        else\
+            res[nonZeroPos--] = nums[i];\
+ \
+    return res;\
+\}\
+\
+28. \
+public int[] withoutTen(int[] nums) \{\
+    int[] copy = new int[nums.length];\
+    int index = 0;\
+ \
+    for (int i = 0; i < nums.length; i++)\
+        if (nums[i] != 10) \{\
+            copy[index] = nums[i];\
+            index++;\
+        \}\
+    return copy;\
+\}\
+29.\
+public int[] zeroMax(int[] nums) \{\
+    int largestOdd = 0;\
+    for (int i = nums.length - 1; i >= 0; i--) \{\
+        if (nums[i] % 2 == 1 && nums[i] > largestOdd)\
+            largestOdd = nums[i];\
+        if (nums[i] == 0)\
+            nums[i] = largestOdd;\
+    \}\
+    return nums;\
+\}\
+30.\
+public int[] evenOdd(int[] nums) \{\
+    int[] res   = new int[nums.length];\
+    int evenPos = 0;\
+    int oddPos  = res.length - 1;\
+ \
+    for (int i = 0; i < nums.length; i++)\
+        if (nums[i] % 2 == 0)\
+            res[evenPos++] = nums[i];\
+        else\
+            res[oddPos--]  = nums[i];\
+    return res;\
+\}\
+}
