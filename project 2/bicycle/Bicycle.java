@@ -15,7 +15,8 @@ public class Bicycle {
     private int numofWheels;
     private double massofBicycle;   
     private boolean wheelGas;
-            
+    private int time; 
+    private int velocity;
     
     public Bicycle(){}
     
@@ -37,16 +38,28 @@ public class Bicycle {
             System.out.println("go");
             
         }
-        return "Congratulations!";
+        return "Please check the your velocity next!";
     } 
+    public void velocity(int velocity){
+        if (velocity >= 20 ){
+            System.out.println("You are too fast");
+        }
+        else if (velocity < 20){
+                    System.out.println("Congratulations!");
+
+    }
+                
+    }
     
     public static void main (String [] args){
         Bicycle w =new Bicycle(2,10);
         Bicycle f =new Bicycle();
+        Bicycle v = new Bicycle();
         
 
            System.out.println(w.checkpoint(2,10));
            System.out.println(f.flatTire());
+           v.velocity(20);
 
             }
 
