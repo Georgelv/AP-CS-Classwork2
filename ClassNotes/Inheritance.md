@@ -23,5 +23,6 @@ Invoking the the method in the superclass.
 Subclass can do method overriding and partial overriding.
 
 7.  Which is bigger? A superclass or a subclass?
+
 subclass
 
