@@ -2,7 +2,7 @@
 @author George Lyu
 APCS
 Mr.Daniel
-This program displays a checkpoint for bicycle.
+This program displays a checkpoint for bicycle and MountainBicycle.
  */
 package bicycle;
 
@@ -55,6 +55,7 @@ public class Bicycle {
         Bicycle w =new Bicycle(2,10);
         Bicycle f =new Bicycle();
         Bicycle v = new Bicycle();
+        Bicycle m = new MountainBicycle(10, true);
         
 
            System.out.println(w.checkpoint(2,10));
