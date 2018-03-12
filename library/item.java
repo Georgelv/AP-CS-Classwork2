@@ -5,7 +5,9 @@
  */
 package library;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -17,10 +19,13 @@ public class item {
     private String nameofAuthor;
     private int num;
     private String title;
-    private boolean loan;
+    public boolean loan;
     private Date date;
     private String author;
     private boolean requested;
+        private boolean onLoan;
+        public Date dueDate;
+
     
     public item(String title, String author, int num, boolean loan, Date date,boolean requested) {
                this.title=title;
@@ -38,11 +43,28 @@ public class item {
         else{
                     System.out.println("Nope this book will not be loan");
 
+    }}
+         private static Date addDays (Date date, int days){
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, days);
+
+        return cal.getTime();
     }
+    
+    public void Borrowing(Borrowerid a){
+        boolean onLoan = true;
+        Date today = new Date();
+        Date dueDate = addDays(today, 14);
+        
+    }
+ public void returning(){
+     this.onLoan = false;
+ }
         
         
     }
-}
+
     
     
 
