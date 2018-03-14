@@ -2,9 +2,13 @@
  George Lyu
 APCS S3C7
 Mr. Daniel
-This is a shape abstract class which employs equals method. 
+This is a shape abstract class which employs equals and compare method. 
  */
 package shape;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *
@@ -28,6 +32,14 @@ private String name;
         System.out.println(a.getParameter());
         System.out.println(a.getArea());
         System.out.println(a.equals(obj));
+        
+              
+        List b=new ArrayList();
+        b.add(new Circle(4,"One"));
+        b.add(new Circle(2,"Two"));
+        b.add(new Circle(1,"Three"));
+        Collections.sort(b);
+        System.out.println(b);
 
     }
     

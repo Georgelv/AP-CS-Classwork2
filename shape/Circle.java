@@ -13,6 +13,7 @@ public class Circle extends Shape {
 
     private double radius;
     private double b;
+    private String name;
     public Circle(double circleRadius, String circleName) {
         
         
@@ -34,5 +35,10 @@ return Math.PI * radius * radius;
         return (this.radius == obj.b);
     }
 
-   
-}
+   public int compareTo(Object x){
+        Circle y=(Circle) x;
+        return (int )(this.radius-y.radius);
+        }
+         public String toString(){
+    return "circle compare{"+this.radius+"}";
+}}
