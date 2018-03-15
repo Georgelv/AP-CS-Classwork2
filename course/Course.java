@@ -12,46 +12,54 @@ package course;
  * @author lvzhaozhou
  */
 public class Course {
-    private String CourseTitle;
-    private int MaxStudents;
-    private int  NumberOfLessons;
-   // Lesson[]CourseLesson = new Lesson[50];
-    Lesson[] CourseLesson = new Lesson[50];
-    Assessment CourseAssessment;
-    
-    
-   
-    
-    public Course(String CourseNumber, int MaxStudents,int NumberOfLessons){
-        this.CourseTitle=CourseTitle;
-        this.MaxStudents=MaxStudents;
-        this.NumberOfLessons=NumberOfLessons;
-    } 
-    
-    public void addlesson(String LessonTitle, int DurationMinutes,boolean requireslab){
-        for(int i=0;i < CourseLesson.length;i++){
-            if (CourseLesson[i]!=null){
-                CourseLesson[i] =new Lesson(LessonTitle, DurationMinutes, requireslab);
-            }
-            break;
-        }
-       
-        
-    }
-    public void addassessment(String AssessmentTitle, int MaxMarks){
-        Assessment d = new Assessment(AssessmentTitle, MaxMarks);
-        
-    }
-    public void OutputCouseDetails(){
-        
-        System.out.println("CourseTitle"+ CourseTitle);
-        System.out.println("MaxStudents"+MaxStudents);
-        System.out.println("NumOfLessons"+NumberOfLessons);
-        
-        
-    }
-   public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+	String courseTitle;
+	int maxStudent;
+	int numberOfLessons;
+	 Lesson[] courseLesson = new Lesson[50];
+	Assessment courseAssessment;
+	
+	public Course(String courseTitle, int maxStudent, int numberOfLessons) {
+		this.courseTitle=courseTitle;
+		this.maxStudent=maxStudent;
+		this.numberOfLessons=numberOfLessons;
+	}
+	
+	public void addLesson(String lessonTitle,int durationMinutes,boolean requiresLab) {
+		for(int i=0;i<courseLesson.length;i++) {
+			if(courseLesson[i]==null) {
+				courseLesson[i]= new Lesson(lessonTitle,durationMinutes,requiresLab);
+				break;
+			}
+		}
+		
+		
+	}
+	
+	public void addAssessment(String assessmentTitle,int maxMarks) {
+		courseAssessment=new Assessment(assessmentTitle,maxMarks);
+	}
+	
+	public void outputCourseDetails() {
+		System.out.print("Course: ");
+		System.out.println(courseTitle+"\n"+"Max Students: "+maxStudent);
+		System.out.println();
+		this.courseAssessment.outputAssessmentDetails();
+		for(int i=0;i<this.courseLesson.length;i++) {
+			if(this.courseLesson[i]!=null) {
+			System.out.println("Lesson "+(i+1));
+			this.courseLesson[i].outputLessonDetails();
+			}
+	}
+	}
+	
+	public static void main(String[] args) {
+		Course a = new Course("Computer",20,12);		
+		a.addAssessment("Project1", 100);	
+		a.addLesson("Inheritance", 40, false);
+		a.addLesson("Abstract", 40, true);
+
+		a.outputCourseDetails();
+		
+		
+	}
 }
